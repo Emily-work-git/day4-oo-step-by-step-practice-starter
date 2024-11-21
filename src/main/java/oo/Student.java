@@ -1,6 +1,6 @@
 package oo;
 
-public class Student extends Person{
+public class Student extends Person {
     protected static final String OCCUPATION = "student";
     private Klass klass;
 
@@ -13,14 +13,18 @@ public class Student extends Person{
     }
 
     public boolean isIn(Klass klass) {
-        return this.klass!= null && this.klass.getClassNumber()==klass.getClassNumber();
+        return this.klass != null && this.klass.getClassNumber() == klass.getClassNumber();
     }
 
     @Override
-    public String introduce(){
-        String occupationIntroduction = " I am a "+ OCCUPATION+".";
-        String classIntroduction = " I am in class "+ klass.getClassNumber()+ ".";
-        return super.introduce()+occupationIntroduction+classIntroduction;
+    public String introduce() {
+        String occupationIntroduction = " I am a " + OCCUPATION + ".";
+        String classIntroduction = " I am in class " + klass.getClassNumber() + ".";
+        return super.introduce() + occupationIntroduction + classIntroduction;
+    }
+
+    public Klass getKlass() {
+        return klass;
     }
 
 }
