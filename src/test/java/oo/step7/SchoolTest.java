@@ -1,16 +1,15 @@
 package oo.step7;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-import java.util.List;
-import oo.Klass;
 import oo.School;
 import oo.Student;
 import oo.Teacher;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class SchoolTest {
 
@@ -24,6 +23,7 @@ public class SchoolTest {
     private String systemOut() {
         return outContent.toString();
     }
+
     @Test
     public void should_return_correct_output_when_there_are_two_teachers_and_two_students() {
         School school = new School();
@@ -45,8 +45,9 @@ public class SchoolTest {
                 "My name is David. I am 19 years old. I am a student.\r\n";
         assertThat(systemOut()).isEqualTo(expectedOutput);
     }
+
     @Test
-    public void should_return_correct_output_when_there_are_only_one_teacher_and_two_students(){
+    public void should_return_correct_output_when_there_are_only_one_teacher_and_two_students() {
         School school = new School();
         Teacher alice = new Teacher(1, "Alice", 30);
         Student Charlie = new Student(3, "Charlie", 18);
@@ -63,8 +64,9 @@ public class SchoolTest {
                 "My name is David. I am 19 years old. I am a student.\r\n";
         assertThat(systemOut()).isEqualTo(expectedOutput);
     }
+
     @Test
-    public void should_return_correct_output_when_there_are_only_two_students(){
+    public void should_return_correct_output_when_there_are_only_two_students() {
         School school = new School();
         Student Charlie = new Student(3, "Charlie", 18);
         Student David = new Student(4, "David", 19);
@@ -78,8 +80,9 @@ public class SchoolTest {
                 "My name is David. I am 19 years old. I am a student.\r\n";
         assertThat(systemOut()).isEqualTo(expectedOutput);
     }
+
     @Test
-    public void should_return_correct_output_when_there_are_only_one_teacher(){
+    public void should_return_correct_output_when_there_are_only_one_teacher() {
         School school = new School();
         Teacher alice = new Teacher(1, "Alice", 30);
 
@@ -90,8 +93,9 @@ public class SchoolTest {
         String expectedOutput = "My name is Alice. I am 30 years old. I am a teacher.\r\n";
         assertThat(systemOut()).isEqualTo(expectedOutput);
     }
+
     @Test
-    public void should_return_correct_output_when_there_are_no_teacher_and_no_student(){
+    public void should_return_correct_output_when_there_are_no_teacher_and_no_student() {
         School school = new School();
 
         school.startSchool();
