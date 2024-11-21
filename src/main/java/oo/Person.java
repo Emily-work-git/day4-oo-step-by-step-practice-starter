@@ -15,6 +15,14 @@ public class Person {
         return "My name is " + name + ". I am " + age + " years old.";
     }
 
+    public void acknowledgeLeaderAssignment(Klass klass) {
+        if (this instanceof Student) {
+            System.out.println(String.format("I am %s, student of Class %d. I know %s become Leader.", name, klass.getClassNumber(), klass.getLeader().name));
+        } else if (this instanceof Teacher) {
+            System.out.println(String.format("I am %s, teacher of Class %d. I know %s become Leader.", name, klass.getClassNumber(), klass.getLeader().name));
+        }
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (obj == null || getClass() != obj.getClass()) return false;
