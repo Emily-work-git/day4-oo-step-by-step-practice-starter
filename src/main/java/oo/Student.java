@@ -18,9 +18,11 @@ public class Student extends Person {
 
     @Override
     public String introduce() {
-        String occupationIntroduction = " I am a " + OCCUPATION + ".";
-        String classIntroduction = " I am in class " + klass.getClassNumber() + ".";
-        return super.introduce() + occupationIntroduction + classIntroduction;
+        String introduction = super.introduce()+" I am a " + OCCUPATION + ".";
+        if (klass != null) {
+            introduction += " I am in class " + klass.getClassNumber() + ".";
+        }
+        return introduction;
     }
 
     public Klass getKlass() {
