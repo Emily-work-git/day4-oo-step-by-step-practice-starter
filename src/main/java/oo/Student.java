@@ -20,7 +20,12 @@ public class Student extends Person {
     public String introduce() {
         String introduction = super.introduce()+" I am a " + OCCUPATION + ".";
         if (klass != null) {
-            introduction += " I am in class " + klass.getClassNumber() + ".";
+            if ( klass.isLeader(this)){
+                introduction += " I am the leader of class "+ klass.getClassNumber()+".";
+            }
+            else {
+                introduction += " I am in class " + klass.getClassNumber() + ".";
+            }
         }
         return introduction;
     }
@@ -28,5 +33,4 @@ public class Student extends Person {
     public Klass getKlass() {
         return klass;
     }
-
 }
