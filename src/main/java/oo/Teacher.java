@@ -1,7 +1,10 @@
 package oo;
 
+import java.util.List;
+
 public class Teacher extends Person{
     protected static final String OCCUPATION = "teacher";
+    protected List<Klass> classes;
 
     public Teacher(int id, String name, int age) {
         super(id, name, age);
@@ -9,6 +12,7 @@ public class Teacher extends Person{
 
     @Override
     public String introduce(){
-        return ("My name is " + name + ". I am " + age + " years old. I am a " + OCCUPATION + ".");
+        String occupationIntroduction = " I am a "+ OCCUPATION+".";
+        return super.introduce() + occupationIntroduction;
     }
 }
