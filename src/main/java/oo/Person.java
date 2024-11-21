@@ -1,9 +1,9 @@
 package oo;
 
 public class Person {
-    private String name;
-    private int age;
-    private int id;
+    protected String name;
+    protected int age;
+    protected int id;
 
     public Person(int id, String name, int age) {
         this.name = name;
@@ -12,9 +12,8 @@ public class Person {
     }
 
     public String introduce(){
-        return ("My name is " + name + ". I am " + age + " years old.");
+        return  "My name is " + name + ". I am " + age + " years old.";
     }
-
 
     @Override
     public boolean equals(Object obj) {
@@ -23,6 +22,7 @@ public class Person {
         Person anotherPerson = (Person) obj;
         return this.id == anotherPerson.id;
     }
+
     @Override
     public int hashCode() {
         return this.id;
