@@ -17,15 +17,12 @@ public class Teacher extends Person {
         String introduction = super.introduce() + " I am a " + OCCUPATION + ".";
         String classIntroduction = " I teach Class ";
         if (!classes.isEmpty()) {
-            classIntroduction +=this.classes.stream()
+            classIntroduction += this.classes.stream()
                     .map(i -> String.valueOf(i.getClassNumber()))
                     .collect(Collectors.joining(", ")) + '.';
             introduction += classIntroduction;
         }
-
-
         return introduction;
-
     }
 
     public void assignTo(Klass klass) {
@@ -37,7 +34,8 @@ public class Teacher extends Person {
     public boolean belongsTo(Klass klass) {
         return klass != null && this.classes.contains(klass);
     }
-    public boolean isTeaching(Student student){
+
+    public boolean isTeaching(Student student) {
         return belongsTo(student.getKlass());
     }
 }
